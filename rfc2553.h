@@ -75,7 +75,7 @@
      sockaddr_storage either (same RFC) so we definately will not be
      doing any IPv6 stuff. Do not use the members of this structure to
      retain portability, cast to a sockaddr. */
-  #define sockaddr_storage sockaddr_in
+  //#define sockaddr_storage sockaddr_in
 #endif
 
 /* getnameinfo support (glibc2.0 has getaddrinfo only) */
@@ -99,7 +99,7 @@
   #define NI_DATAGRAM (1<<4)
   #endif
 
-  #define sockaddr_storage sockaddr_in
+  //#define sockaddr_storage sockaddr_in
 #endif
 
 /* Glibc 2.0.7 misses this one */

@@ -146,5 +146,4 @@ typedef int SOCKET;
 #ifdef OS2
   #undef AF_INET6
 #endif
-
 #endif

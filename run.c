@@ -19,6 +19,10 @@
 #include <unistd.h>
 #endif
 
+#if defined(DJGPP)
+#include <process.h>
+#endif
+
 #include "sys.h"
 #include "run.h"
 #include "tools.h"
@@ -35,6 +39,10 @@
 #elif defined(OS2)
 #define SHELL "cmd.exe"
 #define SHELL_META "\"\'\\%<>|" /* not sure */
+#define SHELLOPT "/c"
+#elif defined(DOS)
+#define SHELL (getenv("COMSPEC") ? getenv("COMSPEC") : "command.com")
+#define SHELL_META "\"\'\\%<>|&^@"
 #define SHELLOPT "/c"
 #else
 #error "Unknown platform"
